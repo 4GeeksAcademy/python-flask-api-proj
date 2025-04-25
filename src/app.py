@@ -49,6 +49,7 @@ def get_todos():
 @app.route('DELETE/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
     print("This is the position to delete:", position)
+    todos.pop(position)
     return jsonify(todos)
 
 if __name__ == '__main__':
